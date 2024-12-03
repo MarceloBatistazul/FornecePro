@@ -1,0 +1,74 @@
+﻿@model CadastroModels
+@{
+    ViewData["title"] = "Excluir Fornecedores";
+}
+<div class="container bg-dark p-5 rounded-5">
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Excluir Fornecedor</h1>
+    </div>
+    <form method="post" asp-controller="Cadastro" asp-action="Excluir">
+        <input type="hidden" asp-for="Id">
+        <h2 class="text-light">Tem certeza que deseja excluir o registro</h2>
+
+        <div class="mb-3">
+            <label for="RazaoSocial" class="form-label text-light">Razão Social</label>
+            <input type="text" class="form-control" asp-for="RazaoSocial" id="RazaoSocial" placeholder="Razão Social do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="RazaoSocial"></span>
+        </div>
+        <div class="mb-3">
+            <label for="NomeFantasia" class="form-label text-light">Nome Fantasia</label>
+            <input type="text" class="form-control" asp-for="NomeFantasia" id="NomeFantasia" placeholder="Nome Fantasia do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="NomeFantasia"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Email" class="form-label text-light">E-mail</label>
+            <input type="email" class="form-control" asp-for="Email" id="Email" placeholder="E-mail do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Telefone" class="form-label text-light">Telefone</label>
+            <input type="text" class="form-control" asp-for="Telefone" id="Telefone" placeholder="Telefone do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="Telefone"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Logradouro" class="form-label text-light">Logradouro</label>
+            <input type="text" class="form-control" asp-for="Logradouro" id="Logradouro" placeholder="Logradouro do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="Logradouro"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Numero" class="form-label text-light">Número</label>
+            <input type="text" class="form-control" asp-for="Numero" id="Numero" placeholder="Número do endereço" disabled>
+            <span class="text-danger" asp-validation-for="Numero"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Bairro" class="form-label text-light">Bairro</label>
+            <input type="text" class="form-control" asp-for="Bairro" id="Bairro" placeholder="Bairro do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="Bairro"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Cidade" class="form-label text-light">Cidade</label>
+            <input type="text" class="form-control" asp-for="Cidade" id="Cidade" placeholder="Cidade do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="Cidade"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Estado" class="form-label text-light">Estado</label>
+            <input type="text" class="form-control" asp-for="Estado" id="Estado" placeholder="Estado do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="Estado"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Cep" class="form-label text-light">CEP</label>
+            <input type="text" class="form-control" asp-for="Cep" id="Cep" placeholder="CEP do Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="Cep"></span>
+        </div>
+        <div class="mb-3">
+            <label for="NomeContato" class="form-label text-light">Nome do Contato</label>
+            <input type="text" class="form-control" asp-for="NomeContato" id="NomeContato" placeholder="Nome do Contato" disabled>
+            <span class="text-danger" asp-validation-for="NomeContato"></span>
+        </div>
+
+        <div class="d-flex gap-5 mt-5">
+            <button type="submit" class="btn btn-danger w-50">Excluir</button>
+            <a class="btn btn-primary w-50" asp-controller="Cadastro" asp-action="Index">Voltar</a>
+        </div>
+
+    </form>

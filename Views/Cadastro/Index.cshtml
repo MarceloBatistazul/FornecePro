@@ -1,0 +1,159 @@
+﻿@model IEnumerable<CadastroModels>
+
+
+
+
+<div class="container mt-5">
+    <!-- Cabeçalho com título e botão de ação -->
+    <div class="row align-items-center mb-4">
+        <div class="col-md-8">
+            <h1 class="display-5 fw-bold text-primary">Fornecedores</h1>
+            <p class="text-muted">Gerencie seus fornecedores de maneira rápida e eficiente.</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center">
+            <a class="btn btn-primary btn-lg shadow-sm rounded-pill" asp-controller="Cadastro" asp-action="Cadastrar">
+                <i class="fas fa-plus-circle me-2"></i> Cadastrar Novo Fornecedor
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Tabela de dados -->
+<div class="table-responsive mt-4">
+    <table class="table table-striped table-bordered">
+        <thead class="table-light text-center">
+            <tr>
+                <th>ID</th>
+                <th>Contato</th>
+                <th>Fantasia</th>
+                <th>Razão Social</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var cadastro in Model)
+                {
+                    <tr>
+                        <td class="text-center">@cadastro.Id</td>
+                        <td>@cadastro.NomeContato</td>
+                        <td>@cadastro.NomeFantasia</td>
+                        <td>@cadastro.RazaoSocial</td>
+                        <td>@cadastro.Telefone</td>
+                        <td>@cadastro.Email</td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-2">
+                                <!-- Botão Visualizar -->
+                                <button class="btn btn-primary btn-sm rounded-pill shadow-sm px-3 py-2 d-flex align-items-center gap-1"
+                                        data-bs-toggle="modal" data-bs-target="#modalVisualizar"
+                                        data-id="@cadastro.Id"
+                                        data-nome="@cadastro.NomeContato"
+                                        data-fantasia="@cadastro.NomeFantasia"
+                                        data-razaosocial="@cadastro.RazaoSocial"
+                                        data-telefone="@cadastro.Telefone"
+                                        data-email="@cadastro.Email"
+                                        data-logradouro="@cadastro.Logradouro"
+                                        data-numero="@cadastro.Numero"
+                                        data-bairro="@cadastro.Bairro"
+                                        data-cidade="@cadastro.Cidade"
+                                        data-cep="@cadastro.Cep"
+                                        data-estado="@cadastro.Estado">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Visualizar</span>
+                                </button>
+                                <!-- Botão Editar -->
+                                <a asp-controller="Cadastro" asp-action="Editar" asp-route-id="@cadastro.Id"
+                                   class="btn btn-warning btn-sm rounded-pill shadow-sm px-3 py-2 d-flex align-items-center gap-1">
+                                    <i class="fas fa-edit"></i>
+                                    <span>Editar</span>
+                                </a>
+                                <!-- Botão Excluir -->
+                                <a asp-controller="Cadastro" asp-action="Excluir" asp-route-id="@cadastro.Id"
+                                   class="btn btn-danger btn-sm rounded-pill shadow-sm px-3 py-2 d-flex align-items-center gap-1">
+                                    <i class="fas fa-trash"></i>
+                                    <span>Excluir</span>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7" class="text-center text-muted">
+                        Nenhum fornecedor encontrado.
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal para visualizar detalhes do fornecedor -->
+<div class="modal fade" id="modalVisualizar" tabindex="-1" aria-labelledby="modalVisualizarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!-- Aplicando classe personalizada -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalVisualizarLabel">Detalhes do Fornecedor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>ID:</strong> <span id="modalId"></span></p>
+                <p><strong>Nome Contato:</strong> <span id="modalNomeContato"></span></p>
+                <p><strong>Nome Fantasia:</strong> <span id="modalNomeFantasia"></span></p>
+                <p><strong>Razão Social:</strong> <span id="modalRazaoSocial"></span></p>
+                <p><strong>Telefone:</strong> <span id="modalTelefone"></span></p>
+                <p><strong>E-mail:</strong> <span id="modalEmail"></span></p>
+                <p><strong>Logradouro:</strong> <span id="modalLogradouro"></span></p>
+                <p><strong>Número:</strong> <span id="modalNumero"></span></p>
+                <p><strong>Bairro:</strong> <span id="modalBairro"></span></p>
+                <p><strong>Cidade:</strong> <span id="modalCidade"></span></p>
+                <p><strong>CEP:</strong> <span id="modalCep"></span></p>
+                <p><strong>Estado:</strong> <span id="modalEstado"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modalVisualizar = document.getElementById('modalVisualizar');
+        modalVisualizar.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var id = button.getAttribute('data-id');
+            var nome = button.getAttribute('data-nome');
+            var fantasia = button.getAttribute('data-fantasia');
+            var razaosocial = button.getAttribute('data-razaosocial');
+            var telefone = button.getAttribute('data-telefone');
+            var email = button.getAttribute('data-email');
+            var logradouro = button.getAttribute('data-logradouro');
+            var numero = button.getAttribute('data-numero');
+            var bairro = button.getAttribute('data-bairro');
+            var cidade = button.getAttribute('data-cidade');
+            var cep = button.getAttribute('data-cep');
+            var estado = button.getAttribute('data-estado');
+
+            document.getElementById('modalId').textContent = id;
+            document.getElementById('modalNomeContato').textContent = nome;
+            document.getElementById('modalNomeFantasia').textContent = fantasia;
+            document.getElementById('modalRazaoSocial').textContent = razaosocial;
+            document.getElementById('modalTelefone').textContent = telefone;
+            document.getElementById('modalEmail').textContent = email;
+            document.getElementById('modalLogradouro').textContent = logradouro;
+            document.getElementById('modalNumero').textContent = numero;
+            document.getElementById('modalBairro').textContent = bairro;
+            document.getElementById('modalCidade').textContent = cidade;
+            document.getElementById('modalCep').textContent = cep;
+            document.getElementById('modalEstado').textContent = estado;
+        });
+    </script>
+</div>
+
+
+

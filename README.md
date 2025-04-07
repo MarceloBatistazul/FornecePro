@@ -48,7 +48,8 @@ dotnet run
 http://localhost:5000
 
 
-![4ec4e254-898f-43ab-9fa8-ba95e78d8548](https://github.com/user-attachments/assets/1c87f53b-8a85-4e6c-9b89-43e1ab003573)
+<img src="https://github.com/user-attachments/assets/1c87f53b-8a85-4e6c-9b89-43e1ab003573" width="200">
+
 
 Este projeto foi desenvolvido com base no framework .NET Core, fornecida pela Microsoft.
 Ela garante estabilidade, performance e compatibilidade com os padrões modernos de desenvolvimento.

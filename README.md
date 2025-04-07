@@ -1,73 +1,62 @@
-# 🔥 FornePro
+# 🔥 FornePro - Plataforma de Gerenciamento de Fornecedores
 
-**FornePro** é uma plataforma de gerenciamento de fornecedores, desenvolvida com foco em simplicidade, eficiência e controle total das informações dos fornecedores de uma empresa.
+## 📌 Descrição
+FornePro é uma plataforma desenvolvida para o gerenciamento eficiente de fornecedores, permitindo um controle total das informações comerciais e contratuais de forma simples e organizada.
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Funcionalidades
+✅ Cadastro de fornecedores
+📋 Listagem de fornecedores cadastrados
+✏️ Edição de informações dos fornecedores
+🗑️ Exclusão de fornecedores
 
-- **C# (.NET Core)** — Backend robusto e moderno
-- **CSS** + **Bootstrap** — Estilização com responsividade e componentes reutilizáveis
-- **SQL** — Banco de dados relacional para persistência dos dados
+## 🛠️ Requisitos
+Antes de iniciar a execução do projeto, verifique se os seguintes requisitos estão instalados no seu ambiente:
 
-## 🧩 Funcionalidades
+🐱‍💻 .NET Core (versão 6 ou superior)
+🗄️ SQL Server ou outro banco de dados compatível
+🎨 Bootstrap (para estilização da interface)
 
-Este projeto implementa um CRUD completo (Create, Read, Update, Delete), permitindo:
+## 🔧 Instalação e Configuração
+📥 Clone o repositório:
+```sh
+git clone https://github.com/seu-usuario/FornePro.git
+```
 
-- ✅ Cadastrar fornecedores
-- 📋 Listar todos os fornecedores
-- ✏️ Editar informações de fornecedores
-- 🗑️ Deletar fornecedores
-
-## 🖥️ Plataforma
-
-A **FornePro** é uma aplicação web que oferece controle e gestão eficiente de fornecedores, com uma interface intuitiva, moderna e responsiva graças ao uso do **Bootstrap**.
-
-## ⚙️ Como rodar o projeto localmente
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/FornePro.git
-
-	2.	Navegue até o diretório do projeto:
-
+📂 Acesse a pasta do projeto:
+```sh
 cd FornePro
+```
 
-
-	3.	Restaure os pacotes e compile a aplicação:
-
+📦 Restaure os pacotes e compile a aplicação:
+```sh
 dotnet restore
 dotnet build
+```
 
-
-	4.	Rode a aplicação:
-
+▶️ Execute a aplicação:
+```sh
 dotnet run
+```
 
-
-	5.	Acesse no navegador:
-
+🌐 Acesse no navegador:
+```
 http://localhost:5000
+```
 
+## 🏛️ Estrutura do Banco de Dados
+O sistema conta com a seguinte estrutura de banco de dados:
 
-<img src="https://github.com/user-attachments/assets/1c87f53b-8a85-4e6c-9b89-43e1ab003573" width="200">
+🗃️ **fornecedores**: armazena informações sobre os fornecedores, como nome, CNPJ, contato e endereço.
 
+## 💻 Tecnologias Utilizadas
+🖥️ **C# (.NET Core)** - Backend robusto e moderno
+🗄️ **SQL Server** - Banco de dados relacional para persistência de dados
+🎨 **Bootstrap** - Interface responsiva e estilizada
 
-Este projeto foi desenvolvido com base no framework .NET Core, fornecida pela Microsoft.
-Ela garante estabilidade, performance e compatibilidade com os padrões modernos de desenvolvimento.
+## ✍️ Autor
+Projeto desenvolvido por Marcelo Batista.
 
-	Saiba mais em: https://dotnet.microsoft.com/
-
-🎨 Framework de Interface
-
-A interface foi desenvolvida com Bootstrap, garantindo responsividade, facilidade de uso e consistência visual.
-
-	Saiba mais em: https://getbootstrap.com/
-
-📜 Licença
-
+## 📜 Licença
 Este projeto está licenciado sob a MIT License.
-Consulte o arquivo LICENSE para mais detalhes.
 
-✍️ Autor
-
-Desenvolvido por Marcelo Batista
 

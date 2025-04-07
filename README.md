@@ -48,10 +48,9 @@ dotnet run
 http://localhost:5000
 
 
+![4ec4e254-898f-43ab-9fa8-ba95e78d8548](https://github.com/user-attachments/assets/1c87f53b-8a85-4e6c-9b89-43e1ab003573)
 
-🖼️ Imagem .NET Utilizada
-
-Este projeto foi desenvolvido com base na imagem oficial do .NET Core SDK, fornecida pela Microsoft.
+Este projeto foi desenvolvido com base no framework .NET Core, fornecida pela Microsoft.
 Ela garante estabilidade, performance e compatibilidade com os padrões modernos de desenvolvimento.
 
 	Saiba mais em: https://dotnet.microsoft.com/
@@ -61,10 +60,6 @@ Ela garante estabilidade, performance e compatibilidade com os padrões modernos
 A interface foi desenvolvida com Bootstrap, garantindo responsividade, facilidade de uso e consistência visual.
 
 	Saiba mais em: https://getbootstrap.com/
-
-📸 Imagens / Mídia
-
-(Adicione aqui capturas de tela ou GIFs mostrando o funcionamento da aplicação)
 
 📜 Licença
 
